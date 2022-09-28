@@ -17,13 +17,15 @@
 <body>
     <h3 style="text-align: center; font-weight: 900; font-family: Arial, Helvetica, sans-serif; margin-top: 30px;">Product Registration</h3>
     <div class="container">
-        <form>
+
+        <!--action="landing.html" method="get"-->
+        <form class="needs-validation" novalidate >
             <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Code</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Product's Code" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -32,7 +34,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Product's Description" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -41,7 +43,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Product's bar code" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Unit price" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -59,7 +61,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Stock" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -68,7 +70,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Provider's name" aria-label="Recipient's Username" aria-describedby="InputGroup1" required />
                     <div class="invalid-feedback">
-                        Incorrect 
+                        fill with valid information 
                     </div>
                 </div>
             </div>
@@ -90,8 +92,9 @@
                 </select>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <button class="btn btn-primary" type="submit">Submit</button>
+                <button type="button" class="btn btn-danger" onClick= "history.go(0)" VALUE=”Refresh” >Cancel</button>
             </div>
         </form>
     </div>
@@ -100,6 +103,8 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
         
+
+        <!--a los campos se le coloca un ID luego con query selector, hace la selección de estos, y luego se crea un evento al botón cancelar donde se coloca el ID de cada campo seguido de punto value y con el símbolo igual le coloca una cadena vacía ""-->
         <script>
             var forms = document.querySelectorAll('.needs-validation');
             
@@ -112,10 +117,15 @@
                         event.preventDefault( )
                         event.stopPropagation( );
 
-                    }
 
+                    }
+                    else{
+                        event.preventDefault( )
+                        window.location.href = "landing.html"
+                    }
+                        
                     form.classList.add( 'was-validated' );
-                   
+                    
                 }, false );
             } );
         </script>
